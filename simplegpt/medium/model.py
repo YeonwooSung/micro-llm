@@ -8,7 +8,7 @@ from simplegpt.medium.config import CONFIG_DICT
 from simplegpt.medium.utils import CfgNode
 
 
-class NewGELU(nn.Module):
+class GELU(nn.Module):
     """
     Implementation of the GELU activation function currently in Google BERT repo (identical to OpenAI GPT).
     Reference: Gaussian Error Linear Units (GELU) paper: https://arxiv.org/abs/1606.08415
@@ -71,7 +71,7 @@ class GptLayer(nn.Module):
         self.mlp = nn.ModuleDict(dict(
             c_fc    = nn.Linear(config.n_embd, 4 * config.n_embd),
             c_proj  = nn.Linear(4 * config.n_embd, config.n_embd),
-            act     = NewGELU(),
+            act     = GELU(),
             dropout = nn.Dropout(config.resid_pdrop),
         ))
         m = self.mlp
