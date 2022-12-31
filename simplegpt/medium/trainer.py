@@ -64,7 +64,7 @@ class Trainer:
 
         # separate the parameters into decay/no_decay groups
         for mn, m in model.named_modules():
-            for pn, p in m.named_parameters():
+            for pn, _ in m.named_parameters():
                 fpn = '%s.%s' % (mn, pn) if mn else pn # full param name
                 # random note: because named_modules and named_parameters are recursive
                 # we will see the same tensors p many many times. but doing it this way
