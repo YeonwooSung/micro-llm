@@ -3,8 +3,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from config import CONFIG_DICT
-from utils import CfgNode
+# custom modules
+from simplegpt.medium.config import CONFIG_DICT
+from simplegpt.medium.utils import CfgNode
 
 
 class NewGELU(nn.Module):
