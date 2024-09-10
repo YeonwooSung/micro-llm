@@ -3,7 +3,7 @@ import time
 import torch
 from torch.utils.data.dataloader import DataLoader
 
-from simplegpt.medium.utils import CfgNode
+from microllm.gpt.medium.utils import CfgNode
 
 
 class Trainer:

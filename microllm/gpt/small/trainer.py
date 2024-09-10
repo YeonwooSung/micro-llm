@@ -6,8 +6,8 @@ from torch.distributed import init_process_group, destroy_process_group
 from torch.utils.data.dataloader import DataLoader
 
 # custom modules
-from simplegpt.small.model import GPT
-from simplegpt.small.config import GPTConfig
+from microllm.gpt.small.model import GPT
+from microllm.gpt.small.config import GPTConfig
 
 
 class Trainer:
