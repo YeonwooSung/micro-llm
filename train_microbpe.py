@@ -5,7 +5,11 @@ The whole thing runs in ~25 seconds on my laptop.
 
 import os
 import time
-from minibpe import BasicTokenizer, RegexTokenizer
+import sys
+
+sys.path.append(".")
+
+from microbpe import BasicTokenizer, RegexTokenizer
 
 # open some text and train a vocab of 512 tokens
 text = open("tests/taylorswift.txt", "r", encoding="utf-8").read()
