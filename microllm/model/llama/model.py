@@ -2,8 +2,11 @@ import torch
 import torch.nn as nn
 from typing import List, Optional, Tuple
 
+# custom module
+from microllm.model.base import Model
 
-class Llama:
+
+class Llama(Model):
     @staticmethod
     def build(
         ckpt_dir: str,
