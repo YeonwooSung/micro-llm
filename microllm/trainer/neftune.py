@@ -18,5 +18,5 @@ def NEFTune(model, noise_alpha=5):
 
     ##### NOTE: this is for a LLaMA model #####
     ##### For a different model, you need to change the attribute path to the embedding #####
-    model.base_model.embed_tokens.forward = noised_embed(model.base_model.embed_tokens.forward, noise_alpha)
+    model.model.tok_embeddings.forward = noised_embed(model.model.tok_embeddings.forward, noise_alpha)
     return model
