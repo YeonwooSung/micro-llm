@@ -1,6 +1,4 @@
 import os
-import glob
-import fire
 import time
 import json
 import math
@@ -144,7 +142,6 @@ class Attention(nn.Module):
 
         # model_parallel_size is 1 for 1 GPU
         model_parallel_size = 1
-        #TODO multi-GPU support?
 
         self.n_local_heads = args.n_heads // model_parallel_size
         self.n_local_kv_heads = self.n_kv_heads // model_parallel_size
