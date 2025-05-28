@@ -28,8 +28,8 @@ import sys
 sys.path.append(".")
 
 # custom modules
-from microllm.llama.llama31.model import Llama31 as Llama
-from microllm.llama.llama31.dataloader import DistributedShardedDataLoader
+from microllm.model.llama.llama31.model import Llama31 as Llama
+from microllm.model.llama.llama31.dataloader import DistributedShardedDataLoader
 
 
 def main(

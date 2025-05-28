@@ -4,7 +4,7 @@ import json
 import math
 from pathlib import Path
 from dataclasses import dataclass
-from typing import List, Optional, Tuple, TypedDict
+from typing import List, Optional, Tuple
 import torch
 from torch import nn
 import torch.nn.functional as F
@@ -419,7 +419,8 @@ class Llama31(Llama):
         model = Transformer(model_args)
         model.load_state_dict(checkpoint, strict=False)
         print(f"Loaded in {time.time() - start_time:.2f} seconds")
-        return Llama(model, tokenizer)
+
+        return Llama31(model, tokenizer)
 
 
     def __init__(self, model: Transformer, tokenizer: Tokenizer):
@@ -522,6 +523,7 @@ class Llama31(Llama):
             block.attention.cache = None
 
         return out_tokens
+
 
     def text_completion(
         self,
